@@ -22,17 +22,8 @@ class App extends React.Component {
   }
 
   componentDidMount() {
-    fetch("https://restcountries.eu/rest/v2/name/france")
-      .then(res => res.json())
-      .then(countries => {
-        this.setState({
-          name: countries[0].name,
-          capital: countries[0].capital,
-          flag: countries[0].flag,
-          population: countries[0].population,
-          region: countries[0].region,
-        })
-      })
+
+    this.getCountry("france")
   }
 
   onSearch = (e) => {
